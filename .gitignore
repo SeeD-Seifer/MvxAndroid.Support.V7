@@ -3,3 +3,5 @@ obj/
 packages/
 *.ncb
 *.nupkg
+*.userprefs
+Resource.Designer.cs
