@@ -45,7 +45,7 @@ namespace MvxAndroid.Support.V7.Views
             get { return _context; }
         }
 
-        protected IMvxAndroidBindingContext BindingContext
+        public IMvxAndroidBindingContext BindingContext
         {
             get { return _bindingContext; }
         }
