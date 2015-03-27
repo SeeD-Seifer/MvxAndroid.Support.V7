@@ -22,10 +22,10 @@ namespace MvxAndroid.Support.V7.Views
 
             var itemTemplateId = MvxAttributeHelpers.ReadListItemTemplateId(context, attrs);
             adapter.ItemTemplateId = itemTemplateId;
-            this.Adapter = adapter;
+			this.MvxAdapter = adapter;
         }
 
-        public new IMvxRecyclerViewAdapter Adapter
+        public IMvxRecyclerViewAdapter MvxAdapter
         {
             get { return this.GetAdapter(); }
             set { this.SetAdapter(value); }
@@ -54,26 +54,26 @@ namespace MvxAndroid.Support.V7.Views
         [MvxSetToNullAfterBinding]
         public IEnumerable ItemsSource
         {
-            get { return this.Adapter.ItemsSource; }
-            set { this.Adapter.ItemsSource = value; }
+			get { return this.MvxAdapter.ItemsSource; }
+			set { this.MvxAdapter.ItemsSource = value; }
         }
 
         public int ItemTemplateId
         {
-            get { return this.Adapter.ItemTemplateId; }
-            set { this.Adapter.ItemTemplateId = value; }
+			get { return this.MvxAdapter.ItemTemplateId; }
+			set { this.MvxAdapter.ItemTemplateId = value; }
         }
 
         public ICommand ItemClick
         {
-            get { return this.Adapter.ItemClick; }
-            set { this.Adapter.ItemClick = value; }
+			get { return this.MvxAdapter.ItemClick; }
+			set { this.MvxAdapter.ItemClick = value; }
         }
 
         public ICommand ItemLongClick
         {
-            get { return this.Adapter.ItemLongClick; }
-            set { this.Adapter.ItemLongClick = value; }
+			get { return this.MvxAdapter.ItemLongClick; }
+			set { this.MvxAdapter.ItemLongClick = value; }
         }
     }
 }

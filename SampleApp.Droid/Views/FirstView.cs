@@ -22,8 +22,8 @@ namespace SampleApp.Views
             var recyclerView = FindViewById<MvxRecyclerView>(Resource.Id.my_recycler_view);
             recyclerView.HasFixedSize = true;
 
-			var bindingContext = ((MvxRecyclerViewAdapter)recyclerView.Adapter).BindingContext;
-			recyclerView.Adapter = new MvxGenericRecyclerViewAdapter<CustomViewHolder> (this, bindingContext, FactoryMethod);
+			var bindingContext = ((MvxRecyclerViewAdapter)recyclerView.MvxAdapter).BindingContext;
+			recyclerView.MvxAdapter = new MvxGenericRecyclerViewAdapter<CustomViewHolder> (this, bindingContext, FactoryMethod);
 
             var layoutManager = new LinearLayoutManager(this);
             recyclerView.SetLayoutManager(layoutManager);
