@@ -24,6 +24,8 @@ namespace MvxAndroid.Support.V7.Views
         private IEnumerable _itemsSource;
         private IDisposable _subscription;
 
+		public Func<View, IMvxAndroidBindingContext, MvxRecyclerViewViewHolder> HolderFactoryMethod { get; set; }
+
         public MvxRecyclerViewAdapter(Context context)
             : this(context, MvxAndroidBindingContextHelpers.Current())
         {}
@@ -195,11 +197,12 @@ namespace MvxAndroid.Support.V7.Views
             var bindingContext = CreateBindingContextForViewHolder();
 
             View view = InflateViewForHolder(parent, viewType, bindingContext);
-            return new MvxRecyclerViewViewHolder(view, bindingContext)
-            {
-                Click = ItemClick,
-                LongClick = ItemLongClick
-            };
+			var holder = HolderFactoryMethod != null 
+						? HolderFactoryMethod (view, bindingContext) 
+						: new MvxRecyclerViewViewHolder(view, bindingContext);
+			holder.Click = ItemClick;
+			holder.LongClick = ItemLongClick;
+			return holder;
         }
 
         protected virtual IMvxAndroidBindingContext CreateBindingContextForViewHolder()
