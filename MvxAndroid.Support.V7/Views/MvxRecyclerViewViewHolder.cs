@@ -99,6 +99,19 @@ namespace MvxAndroid.Support.V7.Views
             if (item == null)
                 return;
 
+			if (command.GetType ().IsGenericType)
+			{
+				// Short: don't allow execute Command<T> when item is not instance of <T>
+				// Note: there are cases when Holder used for header/footer, it is usefull to bind
+				//       ViewModel as DataContext to header/footer rather then list item,
+				//       in that case Command<T> and item types mis-match
+				var gt = command.GetType ().GenericTypeArguments [0];
+				if (!gt.IsAssignableFrom (item.GetType ()))
+				{
+					return;
+				}
+			}
+
             if (!command.CanExecute(item))
                 return;
 
