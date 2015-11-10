@@ -207,7 +207,7 @@ namespace MvxAndroid.Support.V7.Views
 
         protected virtual IMvxAndroidBindingContext CreateBindingContextForViewHolder()
         {
-            return new MvxAndroidBindingContext(_context, _bindingContext.LayoutInflater);
+			return new MvxAndroidBindingContext(_context, _bindingContext.LayoutInflaterHolder);
         }
 
         protected virtual View InflateViewForHolder(ViewGroup parent, int viewType, IMvxAndroidBindingContext bindingContext)
