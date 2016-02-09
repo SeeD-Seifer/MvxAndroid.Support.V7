@@ -3,8 +3,8 @@ using System.Windows.Input;
 using Android.Content;
 using Android.Support.V7.Widget;
 using Android.Util;
-using Cirrious.MvvmCross.Binding.Attributes;
-using Cirrious.MvvmCross.Binding.Droid.Views;
+using MvvmCross.Binding.Droid.Views;
+using MvvmCross.Binding.Attributes;
 
 namespace MvxAndroid.Support.V7.Views
 {

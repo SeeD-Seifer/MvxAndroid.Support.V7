@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Windows.Input;
-using Cirrious.MvvmCross.Binding.Attributes;
+using MvvmCross.Binding.Attributes;
 
 namespace MvxAndroid.Support.V7.Views
 {

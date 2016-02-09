@@ -1,4 +1,4 @@
-using Cirrious.MvvmCross.Binding.BindingContext;
+using MvvmCross.Binding.BindingContext;
 
 namespace MvxAndroid.Support.V7.Views
 {

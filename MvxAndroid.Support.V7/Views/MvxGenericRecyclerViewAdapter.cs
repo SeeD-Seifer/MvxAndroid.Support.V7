@@ -1,7 +1,7 @@
 ﻿using System;
 using Android.Content;
 using Android.Views;
-using Cirrious.MvvmCross.Binding.Droid.BindingContext;
+using MvvmCross.Binding.Droid.BindingContext;
 using Android.Support.V7.Widget;
 
 namespace MvxAndroid.Support.V7.Views
